@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "formatters": {
+    "display": {
+      "format": "%(levelname)-8s %(asctime)s %(name)-6s %(message)s"
+    },
+    "system": {
+      "format": "%(levelname)s,%(asctime)s,%(message)s"
+    },
+    "trade": {
+      "format": "%(created)f,%(asctime)s,%(message)s"
+    }
+  },
+  "handlers": {
+    "default": {
+      "class": "logging.NullHandler"
+    },
+    "display": {
+      "class": "logging.StreamHandler",
+      "level": "DEBUG",
+      "formatter": "display",
+      "stream": "ext://sys.stdout"
+    },
+    "system": {
+      "class": "logging.handlers.TimedRotatingFileHandler",
+      "level": "INFO",
+      "formatter": "system",
+      "filename": "log/system.log",
+      "when": "d",
+      "encoding": "UTF-8"
+    },
+    "trade": {
+      "class": "logging.handlers.TimedRotatingFileHandler",
+      "level": "INFO",
+      "formatter": "trade",
+      "filename": "log/trade.log",
+      "when": "d",
+      "encoding": "UTF-8"
+    }
+  },
+  "loggers": {
+    "SYSTEM": {
+      "level": "DEBUG",
+      "handlers": [
+        "display",
+        "system"
+      ],
+      "propagate": "no"
+    },
+    "TRADE": {
+      "level": "DEBUG",
+      "handlers": [
+        "display",
+        "trade"
+      ],
+      "propagate": "no"
+    }
+  },
+  "root": {
+    "level": "NOTSET",
+    "handlers": [
+      "default"
+    ]
+  }
+}
