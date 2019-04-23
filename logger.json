@@ -2,12 +2,15 @@
   "version": 1,
   "formatters": {
     "display": {
+      "class" : "logger.DisplayFormatter",
       "format": "%(levelname)-8s %(asctime)s %(name)-6s %(message)s"
     },
     "system": {
+      "class" : "logger.CustomFormatter",
       "format": "%(levelname)s,%(asctime)s,%(message)s"
     },
     "trade": {
+      "class" : "logger.CustomFormatter",
       "format": "%(created)f,%(asctime)s,%(message)s"
     }
   },
