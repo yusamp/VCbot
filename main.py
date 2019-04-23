@@ -14,7 +14,7 @@ from logging import config, getLogger
 # ロガー設定
 with open(LOGGER_PATH, encoding='UTF-8') as f:
     config.dictConfig(json.load(f))
-slog = getLogger('SYSTEM')  # システムログ ( 処理上、記録が必要な内容の保存 )
+slog = getLogger('SYSTEM')  # システムログ ( 記録が必要な処理の保存 )
 tlog = getLogger('TRADE')   # トレードログ ( 取引内容の保存 )
 
 

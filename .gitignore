@@ -1,5 +1,5 @@
+/log/*
 /Pipfile
 /Pipfile.lock
-/log/*
+/wakeup.bat
 !.gitkeep
-wakeup.bat
