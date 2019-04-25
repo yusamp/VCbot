@@ -1,6 +1,7 @@
 /log/*
 /Pipfile
 /Pipfile.lock
-/wakeup.bat
+/db.sqlite3
+*.bat
 /SC_*.py
 !.gitkeep
